@@ -2836,6 +2836,59 @@
   }
   .workforce-bullet strong { color: var(--ink); font-weight: 500; }
 
+  /* Editorial agent stack (new) */
+  .agents-stack {
+    max-width: 1120px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 16px 44px 16px 44px;
+    box-shadow: 0 40px 100px -35px rgba(0, 0, 0, 0.1);
+  }
+  .agent-row {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 56px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .agent-row:last-child { border-bottom: none; }
+  .agent-row-shell { background: transparent; }
+  .agent-row-shell .agent-row-name {
+    background: linear-gradient(135deg, #1A1525 0%, #6940A5 60%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .agent-row-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .agent-row-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .agent-row-name {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 52px;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .agent-row-body p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--muted-2);
+    max-width: 640px;
+  }
+
+
   /* ============================================================
      DAY TIMELINE
      ============================================================ */
@@ -2953,11 +3006,83 @@
     font-size: 14px;
   }
   .int-nm {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--ink);
     text-align: center;
   }
+  .int-sub {
+    font-family: 'Geist Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .int-tile.soon { opacity: 0.62; border-style: dashed; }
+  .int-tile.soon .int-ic { filter: grayscale(0.4); }
+
+  /* Native/Integrated "What Klarios owns" groups */
+  .stack-group {
+    max-width: 1100px;
+    margin: 0 auto 56px auto;
+  }
+  .stack-group:last-child { margin-bottom: 0; }
+  .stack-group-head {
+    margin-bottom: 28px;
+    max-width: 780px;
+  }
+  .stack-group-label {
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--violet-a);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .stack-group-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .stack-group-sub {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted-2);
+  }
+  .stack-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .stack-item {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 28px;
+  }
+  .stack-item-name {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .stack-item-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted-2);
+  }
+
+  /* New integration tile colours */
+  .tl-gh { background: linear-gradient(135deg, #24292E, #000000); }
+  .tl-wa { background: linear-gradient(135deg, #25D366, #128C7E); }
 
   /* ============================================================
      MATH / ROI
@@ -3307,6 +3432,130 @@
     font-size: 13px;
   }
   .price-ft li strong { color: var(--ink); font-weight: 500; }
+
+  /* Single-tier "solo" pricing card */
+  .price-solo {
+    max-width: 720px;
+    margin: 0 auto 40px auto;
+  }
+  .price-solo-card {
+    background: linear-gradient(180deg, #0E0B16 0%, #14101F 60%, #1A1525 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    padding: 56px 56px 52px 56px;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 120px -40px rgba(139, 92, 246, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  }
+  .price-solo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 85% 12%, rgba(139, 92, 246, 0.35), transparent 65%),
+      radial-gradient(ellipse 50% 50% at 10% 92%, rgba(244, 114, 182, 0.2), transparent 65%);
+    pointer-events: none;
+  }
+  .price-solo-card > * { position: relative; z-index: 1; }
+  .price-solo-eyebrow {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #C4B5FD;
+    margin-bottom: 14px;
+  }
+  .price-solo-name {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 36px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin-bottom: 32px;
+  }
+  .price-solo-val-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .price-solo-val {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 112px;
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    color: #FFFFFF;
+  }
+  .price-solo-unit {
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .price-solo-sub {
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 30px;
+  }
+  .price-solo-cta {
+    display: block;
+    text-align: center;
+    padding: 18px 24px;
+    background: var(--gradient);
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 24px 60px -18px rgba(139, 92, 246, 0.55);
+  }
+  .price-solo-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 32px 80px -18px rgba(139, 92, 246, 0.7);
+  }
+  .price-solo-meta {
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 14px;
+  }
+  .price-solo-div {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 36px 0 28px 0;
+  }
+  .price-solo-ft-t {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 18px;
+  }
+  .price-solo-ft { list-style: none; }
+  .price-solo-ft li {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 10px 0 10px 26px;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .price-solo-ft li:last-child { border-bottom: none; }
+  .price-solo-ft li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #C4B5FD;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .price-solo-ft li strong { color: #FFFFFF; font-weight: 500; }
 
   .price-notes {
     max-width: 920px;
@@ -3764,15 +4013,11 @@
 
     /* WORKFORCE */
     .workforce { padding: 80px 0; }
-    .org-chart { padding: 28px 20px; }
-    .org-chiefs { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 32px; }
-    .org-chief { padding: 14px 12px; }
-    .org-chief-label { font-size: 8px; }
-    .org-chief-name { font-size: 15px; }
-    .org-subs { grid-template-columns: 1fr 1fr; gap: 10px; }
-    .org-sub { padding: 8px 10px; font-size: 11px; }
-    .workforce-bullets { grid-template-columns: 1fr; gap: 10px; margin-top: 32px; }
-    .workforce-bullet { font-size: 13px; }
+    .agents-stack { padding: 0 22px; }
+    .agent-row { grid-template-columns: 1fr; gap: 14px; padding: 26px 0; }
+    .agent-row-left { flex-direction: row; align-items: baseline; gap: 12px; }
+    .agent-row-name { font-size: 34px; }
+    .agent-row-body p { font-size: 15px; }
 
     /* DAY */
     .day { padding: 80px 0; }
@@ -3821,6 +4066,21 @@
     .price-ft li { font-size: 13px; padding: 6px 0 6px 22px; }
     .price-notes { padding: 18px 22px; }
     .price-note { font-size: 12px; }
+    .price-solo-card { padding: 36px 26px; border-radius: 18px; }
+    .price-solo-name { font-size: 26px; margin-bottom: 22px; }
+    .price-solo-val { font-size: 72px; }
+    .price-solo-unit { font-size: 15px; }
+    .price-solo-cta { font-size: 15px; padding: 16px 20px; }
+    .price-solo-ft li { font-size: 13px; padding: 8px 0 8px 22px; }
+
+    /* STACK GROUPS */
+    .stack-group { margin-bottom: 40px; }
+    .stack-group-title { font-size: 24px; }
+    .stack-group-sub { font-size: 13px; }
+    .stack-list { grid-template-columns: 1fr; gap: 10px; }
+    .stack-item { padding: 20px 22px; }
+    .stack-item-name { font-size: 20px; }
+    .stack-item-desc { font-size: 13px; }
 
     /* FAQ */
     .faq { padding: 80px 0; }
@@ -3878,7 +4138,7 @@
       <a href="#faq" class="nav-link">FAQ</a>
     </div>
     <div class="nav-right">
-      <a href="#register" class="nav-cta">Register interest</a>
+      <a href="#pricing" class="nav-cta">Book a walkthrough</a>
       <button class="nav-burger" aria-label="Open menu" onclick="document.body.classList.toggle('nav-drawer-open')">
         <span></span>
         <span></span>
@@ -3912,7 +4172,7 @@
         FAQ <span class="nav-drawer-link-num">06</span>
       </a>
     </nav>
-    <a href="#register" class="nav-drawer-cta" onclick="document.body.classList.remove('nav-drawer-open')">Register your interest →</a>
+    <a href="#pricing" class="nav-drawer-cta" onclick="document.body.classList.remove('nav-drawer-open')">Book a walkthrough →</a>
     <div class="nav-drawer-meta">klarios.io · Apr 2026 · Private Beta</div>
   </div>
 </div>
@@ -3937,12 +4197,12 @@
     </div>
     <h1 class="hero-wordmark">All signal.</h1>
     <p class="hero-tagline">No noise.</p>
-    <p class="hero-sub">The founder's operating system. Your tools talk, your agents work, your day has focus. Klarios runs Klarios. Now it runs yours.</p>
+    <p class="hero-sub">Close your laptop at 5pm. Klarios runs the business through the night. One shell, seven specialist agents, and every tool you already pay for. No dashboard. No chat. An operator.</p>
     <div class="hero-ctas">
-      <a href="#register" class="btn-primary">Register your interest →</a>
-      <a href="#home-tile" class="btn-secondary">See the product</a>
+      <a href="#pricing" class="btn-primary">Book a Klarios walkthrough →</a>
+      <a href="#agents" class="btn-secondary">Meet the agents</a>
     </div>
-    <div class="hero-meta">NO CREDIT CARD · LIVE IN 30 MINUTES · CANCEL ANYTIME</div>
+    <div class="hero-meta">ONE TIER · $1,500/MONTH · NO PER-SEAT</div>
   </div>
 
   <!-- Floating cycling pop-ups -->
@@ -5069,73 +5329,90 @@
 <section class="workforce" id="agents">
   <div class="container-wide">
     <div class="workforce-head">
-      <div class="eyebrow" style="margin-left:auto;margin-right:auto;">Your agent workforce</div>
-      <h2 class="section-title">You already have a team.<br>Klarios gives you another one<br><span class="italic">that never sleeps.</span></h2>
-      <p class="section-sub">Seventeen specialist agents, organised like a real company. Departments. Chiefs. Sub-agents. Each with a brain, knowledge, and the authority to execute in its scope.</p>
+      <div class="eyebrow" style="margin-left:auto;margin-right:auto;">The team you hired today</div>
+      <h2 class="section-title">One shell.<br>Seven specialists.<br><span class="italic">One flat bill.</span></h2>
+      <p class="section-sub">Klarios isn't a chat interface and it isn't a dashboard. It's an operator. It reads every connected tool overnight, writes the brief, and hands the work to seven specialist agents who ship it while you sleep.</p>
     </div>
 
-    <div class="org-chart">
-      <div class="org-tier-label">C-Suite · Chiefs</div>
-      <div class="org-chiefs">
-        <div class="org-chief">
-          <div class="org-chief-dot"></div>
-          <div class="org-chief-label">REVENUE</div>
-          <div class="org-chief-name">CRO</div>
+    <div class="agents-stack">
+      <div class="agent-row agent-row-shell">
+        <div class="agent-row-left">
+          <div class="agent-row-tag">THE SHELL</div>
+          <div class="agent-row-name">Klarios.</div>
         </div>
-        <div class="org-chief">
-          <div class="org-chief-dot"></div>
-          <div class="org-chief-label">MARKETING</div>
-          <div class="org-chief-name">CMO</div>
-        </div>
-        <div class="org-chief">
-          <div class="org-chief-dot"></div>
-          <div class="org-chief-label">TECHNOLOGY</div>
-          <div class="org-chief-name">CTO</div>
-        </div>
-        <div class="org-chief">
-          <div class="org-chief-dot"></div>
-          <div class="org-chief-label">FINANCE</div>
-          <div class="org-chief-name">CFO</div>
-        </div>
-        <div class="org-chief">
-          <div class="org-chief-dot"></div>
-          <div class="org-chief-label">OPERATIONS</div>
-          <div class="org-chief-name">COO</div>
+        <div class="agent-row-body">
+          <p>The orchestrator. Reads every connected tool overnight, triages the work, writes the morning brief with the three actions that matter today, and routes each task to the specialist who owns it. The brief lands in your inbox at 06:00. You direct, you don't draft.</p>
         </div>
       </div>
 
-      <div class="org-tier-label">Specialist sub-agents</div>
-      <div class="org-subs">
-        <div>
-          <div class="org-sub"><span class="org-sub-dot ok"></span>Sales</div>
-          <div class="org-sub"><span class="org-sub-dot ok"></span>Lead Nurture</div>
-          <div class="org-sub"><span class="org-sub-dot wait"></span>Retention</div>
+      <div class="agent-row">
+        <div class="agent-row-left">
+          <div class="agent-row-tag">01</div>
+          <div class="agent-row-name">Paid Media.</div>
         </div>
-        <div>
-          <div class="org-sub"><span class="org-sub-dot ok"></span>Paid Media</div>
-          <div class="org-sub"><span class="org-sub-dot done"></span>SEO</div>
-          <div class="org-sub"><span class="org-sub-dot ok"></span>Content</div>
-          <div class="org-sub"><span class="org-sub-dot ok"></span>Social Media</div>
-        </div>
-        <div>
-          <div class="org-sub"><span class="org-sub-dot ok"></span>Tech Lead</div>
-          <div class="org-sub"><span class="org-sub-dot ok"></span>Designer</div>
-          <div class="org-sub"><span class="org-sub-dot done"></span>Copywriter</div>
-        </div>
-        <div>
-          <div class="org-sub"><span class="org-sub-dot ok"></span>Finance Manager</div>
-          <div class="org-sub"><span class="org-sub-dot done"></span>Legal</div>
-        </div>
-        <div>
-          <div class="org-sub"><span class="org-sub-dot ok"></span>Virtual Assistant</div>
+        <div class="agent-row-body">
+          <p>Runs Meta Ads end-to-end. Watches CPA, ROAS, and CPM hourly, flags creative fatigue before it burns your budget, and drafts the budget-shift recommendations Paid Media agents usually cost $6k a month to get.</p>
         </div>
       </div>
 
-      <div class="workforce-bullets">
-        <div class="workforce-bullet"><strong>Each agent has a brain</strong> with system prompt, knowledge, capabilities</div>
-        <div class="workforce-bullet"><strong>Escalate</strong> to humans on judgment calls</div>
-        <div class="workforce-bullet"><strong>Review work</strong> in sprints, not an inbox</div>
-        <div class="workforce-bullet"><strong>Add new agents</strong> free on every plan</div>
+      <div class="agent-row">
+        <div class="agent-row-left">
+          <div class="agent-row-tag">02</div>
+          <div class="agent-row-name">SEO.</div>
+        </div>
+        <div class="agent-row-body">
+          <p>Keyword research, rank audits, landing page copy, on-page optimisation. Pulls Search Console daily and rewrites the pages that are losing position. Writes for humans, not for bots.</p>
+        </div>
+      </div>
+
+      <div class="agent-row">
+        <div class="agent-row-left">
+          <div class="agent-row-tag">03</div>
+          <div class="agent-row-name">Designer.</div>
+        </div>
+        <div class="agent-row-body">
+          <p>Website pages, brochures, email templates, app screens, brand assets, print collateral. Every output follows your brand guidelines because Designer has direct read access to them in Klarios documents.</p>
+        </div>
+      </div>
+
+      <div class="agent-row">
+        <div class="agent-row-left">
+          <div class="agent-row-tag">04</div>
+          <div class="agent-row-name">Sales Manager.</div>
+        </div>
+        <div class="agent-row-body">
+          <p>Owns your pipeline. Lead nurture, no-show recovery, close call prep, pricing discipline, stuck-deal detection. Every Calendly booking syncs directly into the native CRM. Nothing falls through.</p>
+        </div>
+      </div>
+
+      <div class="agent-row">
+        <div class="agent-row-left">
+          <div class="agent-row-tag">05</div>
+          <div class="agent-row-name">Tech Lead.</div>
+        </div>
+        <div class="agent-row-body">
+          <p>Code review, PR merges, database schema sanity, infrastructure, integration work. Connected to GitHub, leaves comments on PRs, merges what's ready, blocks what isn't.</p>
+        </div>
+      </div>
+
+      <div class="agent-row">
+        <div class="agent-row-left">
+          <div class="agent-row-tag">06</div>
+          <div class="agent-row-name">Finance Manager.</div>
+        </div>
+        <div class="agent-row-body">
+          <p>Reconciliation, invoice chases, cash collection, runway analysis, monthly close. Lives in Xero, pulls the bank feed daily, computes burn, and tells you at 06:00 how many months you have left.</p>
+        </div>
+      </div>
+
+      <div class="agent-row">
+        <div class="agent-row-left">
+          <div class="agent-row-tag">07</div>
+          <div class="agent-row-name">Legal.</div>
+        </div>
+        <div class="agent-row-body">
+          <p>Contract drafting, contract review, compliance, terms and privacy, supplier paper. Drafts the first version, flags the risks, hands it back to you for the judgment call.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -5195,10 +5472,10 @@
         </div>
       </div>
       <div class="day-step">
-        <div class="day-time">22:00</div>
+        <div class="day-time">17:00</div>
         <div class="day-content">
           <div class="day-title">You close your laptop.</div>
-          <div class="day-desc">Agents keep working. Retention agent runs the recovery loop at 02:00. Content agent schedules tomorrow's posts. You wake up to progress.</div>
+          <div class="day-desc">Agents keep working. Paid Media rotates tomorrow's creative at 02:00. Sales Manager runs the no-show recovery sequence. Finance Manager reconciles yesterday's Xero feed. You wake up to progress.</div>
         </div>
       </div>
     </div>
@@ -5211,28 +5488,60 @@
 <section class="integrations">
   <div class="container">
     <div class="integrations-head">
-      <div class="eyebrow" style="margin-left:auto;margin-right:auto;">Integrations</div>
-      <h2 class="section-title">Your stack.<br><span class="italic">One OAuth each.</span></h2>
-      <p class="section-sub">Klarios reads from the tools you already pay for. Nothing to migrate. Nothing to rip out.</p>
+      <div class="eyebrow" style="margin-left:auto;margin-right:auto;">What Klarios owns on your behalf</div>
+      <h2 class="section-title">Under the hood.<br><span class="italic">Every wire, every pipe.</span></h2>
+      <p class="section-sub">The autonomy story only works if you can see what Klarios touches. Here's the full list, split into what we own natively and what we integrate into your existing stack.</p>
     </div>
 
-    <div class="int-wall">
-      <div class="int-tile"><div class="int-ic tl-meta">M</div><div class="int-nm">Meta Ads</div></div>
-      <div class="int-tile"><div class="int-ic tl-li">in</div><div class="int-nm">LinkedIn</div></div>
-      <div class="int-tile"><div class="int-ic tl-stripe">S</div><div class="int-nm">Stripe</div></div>
-      <div class="int-tile"><div class="int-ic tl-xero">X</div><div class="int-nm">Xero</div></div>
-      <div class="int-tile"><div class="int-ic tl-hubspot">H</div><div class="int-nm">HubSpot</div></div>
-      <div class="int-tile"><div class="int-ic tl-mixpanel">MX</div><div class="int-nm">Mixpanel</div></div>
-      <div class="int-tile"><div class="int-ic tl-notion">N</div><div class="int-nm">Notion</div></div>
-      <div class="int-tile"><div class="int-ic tl-slack">#</div><div class="int-nm">Slack</div></div>
-      <div class="int-tile"><div class="int-ic tl-gsc">G</div><div class="int-nm">Search Console</div></div>
-      <div class="int-tile"><div class="int-ic tl-calendly">C</div><div class="int-nm">Calendly</div></div>
-      <div class="int-tile"><div class="int-ic tl-gmail">@</div><div class="int-nm">Gmail</div></div>
-      <div class="int-tile"><div class="int-ic tl-ga">G</div><div class="int-nm">GA4</div></div>
-      <div class="int-tile"><div class="int-ic tl-intercom">I</div><div class="int-nm">Intercom</div></div>
-      <div class="int-tile"><div class="int-ic tl-ig">IG</div><div class="int-nm">Instagram</div></div>
-      <div class="int-tile"><div class="int-ic tl-xcom">X</div><div class="int-nm">X / Twitter</div></div>
-      <div class="int-tile"><div class="int-ic tl-linear">L</div><div class="int-nm">Linear</div></div>
+    <div class="stack-group">
+      <div class="stack-group-head">
+        <div class="stack-group-label">NATIVE TO KLARIOS</div>
+        <h3 class="stack-group-title">Owned, not integrated.</h3>
+        <p class="stack-group-sub">These systems live inside Klarios. You don't need another vendor, another login, or another bill.</p>
+      </div>
+      <div class="stack-list">
+        <div class="stack-item">
+          <div class="stack-item-name">CRM</div>
+          <div class="stack-item-desc">Klarios is your CRM. Native leads table. Every form submission from your website lands here. Every Calendly booking syncs via webhook. Every lead Sales Manager touches is tracked by status.</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-name">Website + CMS</div>
+          <div class="stack-item-desc">Klarios hosts your marketing site. Templates, pages, blog, forms, all edited from Klarios admin. Designer and SEO agents have direct write access. Prefer your own repo? Use the git PR integration.</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-name">Morning brief + task engine</div>
+          <div class="stack-item-desc">Klarios reads every connected tool overnight and writes a ranked brief of the three highest-impact actions, with the draft work already produced. Every task has an owner and a deadline.</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-name">Logs + audit trail</div>
+          <div class="stack-item-desc">Every agent action, approval, comment, and rejection is logged. Complete traceability. If Paid Media shifted a budget at 02:14, you can see exactly why.</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-name">Scheduled cron</div>
+          <div class="stack-item-desc">Every metric pull, report, handoff, and nightly recap runs on a Klarios cron. No third-party scheduler. No Zapier tax.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-group">
+      <div class="stack-group-head">
+        <div class="stack-group-label">INTEGRATED (READ + LIMITED WRITE)</div>
+        <h3 class="stack-group-title">Your existing stack, on the Klarios rails.</h3>
+        <p class="stack-group-sub">One OAuth each. Klarios reads the data daily and writes where the APIs allow it.</p>
+      </div>
+      <div class="int-wall">
+        <div class="int-tile"><div class="int-ic tl-meta">M</div><div class="int-nm">Meta Ads</div><div class="int-sub">Spend, ROAS, CPA, creative</div></div>
+        <div class="int-tile"><div class="int-ic tl-gsc">G</div><div class="int-nm">Search Console</div><div class="int-sub">Clicks, impressions, position</div></div>
+        <div class="int-tile"><div class="int-ic tl-ig">IG</div><div class="int-nm">Instagram</div><div class="int-sub">Publish, insights, reach</div></div>
+        <div class="int-tile"><div class="int-ic tl-li">in</div><div class="int-nm">LinkedIn</div><div class="int-sub">Company page, posting</div></div>
+        <div class="int-tile"><div class="int-ic tl-xero">X</div><div class="int-nm">Xero</div><div class="int-sub">P&L, bank feed, runway</div></div>
+        <div class="int-tile"><div class="int-ic tl-stripe">S</div><div class="int-nm">Stripe</div><div class="int-sub">MRR, churn, failed payments</div></div>
+        <div class="int-tile"><div class="int-ic tl-mixpanel">MX</div><div class="int-nm">Mixpanel</div><div class="int-sub">DAU, WAU, flows</div></div>
+        <div class="int-tile"><div class="int-ic tl-gh">GH</div><div class="int-nm">GitHub</div><div class="int-sub">PR review, merges</div></div>
+        <div class="int-tile"><div class="int-ic tl-calendly">C</div><div class="int-nm">Calendly</div><div class="int-sub">Bookings, no-shows</div></div>
+        <div class="int-tile soon"><div class="int-ic tl-wa">W</div><div class="int-nm">WhatsApp Cloud</div><div class="int-sub">Nurture, recovery · Phase 2</div></div>
+        <div class="int-tile soon"><div class="int-ic tl-gmail">@</div><div class="int-nm">Email (Resend)</div><div class="int-sub">Outbound drafts · Phase 2</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -5244,64 +5553,64 @@
   <div class="container">
     <div class="math-head">
       <div class="eyebrow" style="margin-left:auto;margin-right:auto;">The math</div>
-      <h2 class="section-title">Klarios replaces<br>your <span class="italic">whole team.</span></h2>
-      <p class="section-sub">Not the strategy, not the judgment. The execution. The 40 hours a week you can't buy back. Six full-time hires and agencies, for less than the price of a junior.</p>
+      <h2 class="section-title">Klarios replaces<br>the ops hire you're <span class="italic">already paying for.</span></h2>
+      <p class="section-sub">Founders at $500k to $3M ARR are already paying $3k to $10k a month for a fractional COO, a VA, an offshore team, or an agency retainer. Klarios is the operator replacement, not another tool on top.</p>
     </div>
 
     <div class="roles-grid">
       <div class="role-card">
-        <div class="role-title">Head of Ops / COO</div>
-        <div class="role-salary">$10,000<span class="role-salary-unit">/mo</span></div>
+        <div class="role-title">Fractional COO</div>
+        <div class="role-salary">$6,000<span class="role-salary-unit">/mo</span></div>
         <div class="role-desc">Runs the operating rhythm. Pulls the data. Writes the brief. Coordinates every function.</div>
-        <div class="role-replaced">Replaced by <strong>Klarios Home tile + Sprints</strong></div>
+        <div class="role-replaced">Replaced by <strong>Klarios shell + morning brief</strong></div>
       </div>
       <div class="role-card">
-        <div class="role-title">Social Media Manager</div>
-        <div class="role-salary">$5,000<span class="role-salary-unit">/mo</span></div>
-        <div class="role-desc">Content calendar. Image generation. Copywriting. Scheduling across every channel.</div>
-        <div class="role-replaced">Replaced by <strong>Content Studio + Social agent</strong></div>
-      </div>
-      <div class="role-card">
-        <div class="role-title">Ads Agency</div>
-        <div class="role-salary">$6,000<span class="role-salary-unit">/mo retainer</span></div>
-        <div class="role-desc">Meta, LinkedIn, Google creative. Performance monitoring. Creative iteration. Scale decisions.</div>
-        <div class="role-replaced">Replaced by <strong>Paid Media agent + Custom ad builder</strong></div>
+        <div class="role-title">Paid Media Agency</div>
+        <div class="role-salary">$5,000<span class="role-salary-unit">/mo retainer</span></div>
+        <div class="role-desc">Meta campaigns, creative iteration, CPA and ROAS monitoring, budget decisions.</div>
+        <div class="role-replaced">Replaced by <strong>Paid Media Agent</strong></div>
       </div>
       <div class="role-card">
         <div class="role-title">SEO Agency</div>
-        <div class="role-salary">$4,000<span class="role-salary-unit">/mo retainer</span></div>
-        <div class="role-desc">Keyword research. Rank tracking. Meta rewrites. Internal linking. Quarterly audits.</div>
-        <div class="role-replaced">Replaced by <strong>SEO agent + GSC engine</strong></div>
+        <div class="role-salary">$3,000<span class="role-salary-unit">/mo retainer</span></div>
+        <div class="role-desc">Keyword research, rank tracking, on-page rewrites, GSC reporting.</div>
+        <div class="role-replaced">Replaced by <strong>SEO Agent</strong></div>
       </div>
       <div class="role-card">
-        <div class="role-title">Sales Manager</div>
-        <div class="role-salary">$7,000<span class="role-salary-unit">/mo</span></div>
-        <div class="role-desc">Pipeline hygiene. Lead nurture. Stuck deal follow-up. CRM reporting.</div>
-        <div class="role-replaced">Replaced by <strong>Sales agent + CRM + Nurture bot</strong></div>
+        <div class="role-title">Offshore VA / team</div>
+        <div class="role-salary">$2,500<span class="role-salary-unit">/mo</span></div>
+        <div class="role-desc">Inbox triage, scheduling, nurture sequences, no-show recovery, light admin.</div>
+        <div class="role-replaced">Replaced by <strong>Sales Manager Agent</strong></div>
       </div>
       <div class="role-card">
-        <div class="role-title">Copywriter</div>
-        <div class="role-salary">$4,000<span class="role-salary-unit">/mo</span></div>
-        <div class="role-desc">Emails. Landing pages. Ad copy. Product copy. Blog. Brand voice maintenance.</div>
-        <div class="role-replaced">Replaced by <strong>Copywriter agent + brand knowledge</strong></div>
+        <div class="role-title">Bookkeeper</div>
+        <div class="role-salary">$1,500<span class="role-salary-unit">/mo</span></div>
+        <div class="role-desc">Reconciliation, invoice chases, monthly close, runway tracking.</div>
+        <div class="role-replaced">Replaced by <strong>Finance Manager Agent</strong></div>
+      </div>
+      <div class="role-card">
+        <div class="role-title">Legal retainer</div>
+        <div class="role-salary">$2,000<span class="role-salary-unit">/mo</span></div>
+        <div class="role-desc">Contract drafting, contract review, terms and privacy, supplier paper.</div>
+        <div class="role-replaced">Replaced by <strong>Legal Agent</strong></div>
       </div>
     </div>
 
     <div class="math-total">
       <div class="math-total-left">
-        <div class="math-total-label">Total team cost</div>
-        <div class="math-total-num">$36,000<span class="math-total-unit">/month</span></div>
-        <div class="math-total-sub">Six hires, agencies, retainers</div>
+        <div class="math-total-label">Total ops spend</div>
+        <div class="math-total-num">$20,000<span class="math-total-unit">/month</span></div>
+        <div class="math-total-sub">Fractional COO + agencies + VA + bookkeeper</div>
       </div>
       <div class="math-total-arrow">→</div>
       <div class="math-total-right">
-        <div class="math-total-label">With Klarios Growth</div>
-        <div class="math-total-num violet">$799<span class="math-total-unit">/month</span></div>
-        <div class="math-total-sub">One tool, one bill, six agents</div>
+        <div class="math-total-label">With Klarios</div>
+        <div class="math-total-num violet">$1,500<span class="math-total-unit">/month</span></div>
+        <div class="math-total-sub">One shell, seven agents, one flat bill</div>
       </div>
     </div>
 
-    <div class="math-close">You're not saving time. You're <span class="violet">saving $35,201 a month</span><br>and still keeping the judgment where it belongs. With you.</div>
+    <div class="math-close">The autonomy story only works when one system owns the stack. That's why there's <span class="violet">one tier, one price,</span> and no starter mode.</div>
   </div>
 </section>
 
@@ -5333,8 +5642,8 @@
       <div class="onboard-step">
         <div class="onboard-num">3</div>
         <div>
-          <div class="onboard-step-title">Meet your agents.</div>
-          <div class="onboard-step-desc">Seventeen roles come pre-built. Each has a brain, system prompt, knowledge, capabilities. You shape them over time.</div>
+          <div class="onboard-step-title">Meet your seven agents.</div>
+          <div class="onboard-step-desc">Paid Media, SEO, Designer, Sales Manager, Tech Lead, Finance Manager, Legal. Each with a brain, system prompt, and direct access to the tools they own.</div>
         </div>
       </div>
       <div class="onboard-step">
@@ -5357,74 +5666,37 @@
   <div class="container">
     <div class="pricing-head">
       <div class="eyebrow" style="margin-left:auto;margin-right:auto;">Pricing</div>
-      <h2 class="section-title">Simple plans that grow<br>with your <span class="italic">team.</span></h2>
-      <p class="section-sub">Start with five agents. Scale to unlimited. Every plan includes the Home tile, central memory, and Claude-powered insights.</p>
+      <h2 class="section-title">Close your laptop at 5pm.<br>Klarios runs the business<br><span class="italic">through the night.</span></h2>
+      <p class="section-sub">One tier. No per-seat. No starter mode. Klarios replaces the ops hire you're already paying $3,000 to $10,000 a month for, and takes the stack with it.</p>
     </div>
 
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-name">Starter</div>
-        <div class="price-tagline">Your focus today, content across every channel, ads creative on tap.</div>
-        <div class="price-p"><span class="price-val">$399</span><span class="price-unit">/month</span></div>
-        <div class="price-psub">BILLED MONTHLY · CANCEL ANYTIME</div>
-        <a href="#register" class="price-btn">Register interest</a>
-        <div class="price-ft-t">Included</div>
-        <ul class="price-ft">
-          <li><strong>Home tile</strong> with daily Klarios brief</li>
-          <li><strong>Social Media agent</strong> across Instagram, LinkedIn, X</li>
-          <li><strong>Content Studio</strong> (Claude + Midjourney)</li>
-          <li><strong>Custom ad builder</strong> (1:1 + 9:16)</li>
-          <li>Content calendar with cron scheduling</li>
-          <li>5 agents included</li>
-          <li>Email support</li>
-        </ul>
-      </div>
-
-      <div class="price-card featured">
-        <div class="price-badge">MOST POPULAR</div>
-        <div class="price-name">Growth</div>
-        <div class="price-tagline">Everything in Starter, plus the full analytics spine and agent orchestration.</div>
-        <div class="price-p"><span class="price-val">$799</span><span class="price-unit">/month</span></div>
-        <div class="price-psub">BILLED MONTHLY · CANCEL ANYTIME</div>
-        <a href="#register" class="price-btn">Register interest</a>
-        <div class="price-ft-t">Everything in Starter, plus</div>
-        <ul class="price-ft">
-          <li><strong>5-tab Analytics</strong> (Revenue, Marketing, Audience, Product, Finance)</li>
-          <li><strong>All connections</strong> (Meta, Xero, GSC, Mixpanel, LinkedIn, Stripe, +more)</li>
-          <li><strong>Agent Orchestration</strong> — Sprints, handoffs, dependencies</li>
-          <li><strong>Paid Media agent</strong> runs your ads end-to-end</li>
-          <li><strong>SEO agent</strong> with GSC integration</li>
-          <li>Content Studio (all models: Opus, GPT-4.1, Gemini, Veo, Runway, Kie)</li>
-          <li>15 agents included</li>
-          <li>Priority support</li>
-        </ul>
-      </div>
-
-      <div class="price-card">
-        <div class="price-name">Scale</div>
-        <div class="price-tagline">Everything in Growth, plus the full sales engine and white-glove support.</div>
-        <div class="price-p"><span class="price-val">$1,499</span><span class="price-unit">/month</span></div>
-        <div class="price-psub">BILLED MONTHLY · VOLUME DISCOUNTS</div>
-        <a href="#register" class="price-btn">Register interest</a>
-        <div class="price-ft-t">Everything in Growth, plus</div>
-        <ul class="price-ft">
-          <li><strong>Pipeline + CRM</strong> (replaces HubSpot, Airtable, Notion boards)</li>
-          <li><strong>Lead Nurture bot</strong> (WhatsApp via Meta Cloud API)</li>
-          <li><strong>Sales agent</strong> with qualification, follow-up, stuck-deal detection</li>
-          <li><strong>Retention agent</strong> with churn prediction</li>
-          <li>Unlimited agents</li>
-          <li>Custom integrations</li>
-          <li>SSO + audit logs</li>
-          <li><strong>Dedicated success manager</strong></li>
-          <li>99.9% uptime SLA</li>
+    <div class="price-solo">
+      <div class="price-solo-card">
+        <div class="price-solo-eyebrow">KLARIOS</div>
+        <div class="price-solo-name">The operator replacement.</div>
+        <div class="price-solo-val-row">
+          <span class="price-solo-val">$1,500</span><span class="price-solo-unit">/month</span>
+        </div>
+        <div class="price-solo-sub">Flat. One tier. No per-seat. No upsell ladder.</div>
+        <a href="#register" class="price-solo-cta">Book a Klarios walkthrough →</a>
+        <div class="price-solo-meta">30 MINUTES · CAMERON · NO PITCH DECK</div>
+        <div class="price-solo-div"></div>
+        <div class="price-solo-ft-t">What's inside</div>
+        <ul class="price-solo-ft">
+          <li><strong>Klarios shell</strong> — reads every connected tool overnight and writes the morning brief</li>
+          <li><strong>Seven specialist agents</strong> — Paid Media, SEO, Designer, Sales Manager, Tech Lead, Finance Manager, Legal</li>
+          <li><strong>Native CRM</strong> — every form, every Calendly booking, every lead tracked by status</li>
+          <li><strong>Website + CMS</strong> — Klarios hosts your marketing site, SEO and Designer agents edit directly</li>
+          <li><strong>Sprints + audit trail</strong> — every agent action logged, every decision traceable</li>
+          <li><strong>All integrations</strong> — Meta Ads, Xero, GSC, LinkedIn, Instagram, Mixpanel, GitHub, Calendly, WhatsApp</li>
         </ul>
       </div>
     </div>
 
     <div class="price-notes">
-      <div class="price-note">Every plan includes a <strong>14-day free trial.</strong> No credit card to start.</div>
-      <div class="price-note">Every plan supports <strong>Bring Your Own Anthropic Key (BYOK)</strong>. Heavy operators save $1-2k/month on inference.</div>
-      <div class="price-note"><strong>Enterprise?</strong> Custom quote for 10+ seats and compliance requirements.</div>
+      <div class="price-note">Compare it to the <strong>$3,000 to $10,000 a month</strong> you're already spending on a fractional COO, a VA, an offshore team, or an agency retainer.</div>
+      <div class="price-note">Klarios <strong>owns the entire ops stack</strong>. The single-tier model is a feature: autonomy only works when one system has the full picture.</div>
+      <div class="price-note"><strong>Every customer gets Cameron.</strong> We're not scaling the sales team yet. You get the founder on the walkthrough.</div>
     </div>
   </div>
 </section>
@@ -5442,35 +5714,35 @@
     <div class="faq-grid">
       <div class="faq-item">
         <div class="faq-q">How is this different from HubSpot, Notion, or Zapier?</div>
-        <div class="faq-a">They store data or move it between tools. Klarios reads all of it and tells you what to do. HubSpot doesn't write your standup. Notion doesn't catch stuck deals. Zapier doesn't prioritise your day. Klarios does all three and ships the work.</div>
+        <div class="faq-a">Those tools show you data or move it between systems. Klarios runs the business on top of it. HubSpot doesn't write your standup. Notion doesn't catch stuck deals. Zapier doesn't prioritise your day. Klarios reads every tool overnight, writes the brief, and seven specialist agents ship the work.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Why only one tier at $1,500 a month?</div>
+        <div class="faq-a">Because autonomy only works when one system owns the full stack. A $500 "reporting mode" would lock customers into never upgrading and break the promise. One tier, one price, full ownership, flat. If Klarios doesn't replace your ops spend inside 60 days, you walk.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Who is this for?</div>
+        <div class="faq-a">Founders at roughly $500k to $3M ARR with 0 to 3 employees who are already paying $3k to $10k a month for a fractional COO, a VA, an offshore team, or an agency retainer. If you're pre-revenue, you're too early. If you have a 20-person ops team, you're too late.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Do I need to rip out my current tools?</div>
-        <div class="faq-a">No. Klarios connects to what you already have. HubSpot, Stripe, Notion, Meta, GA4, Linear, Slack, Intercom, Gmail, Calendly, Mixpanel, Xero, Mixpanel, GSC, and more. Nothing migrates.</div>
+        <div class="faq-a">No. Klarios connects to Meta Ads, Xero, Stripe, LinkedIn, Instagram, Search Console, Mixpanel, GitHub, Calendly via OAuth. The CRM, website, CMS, brief engine, and audit trail are native to Klarios, so those you do migrate, and that's the point.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Does the AI replace my team?</div>
-        <div class="faq-a">No. It replaces the part of their job they hate. Your Paid Media person still owns strategy. Klarios runs the daily report, flags underperforming ads, drafts the optimisation brief. Your person approves in 60 seconds and goes back to strategy.</div>
+        <div class="faq-q">Does it replace my team?</div>
+        <div class="faq-a">It replaces the ops layer underneath your team. Strategy, judgment, and the hard calls still live with you. The daily execution, the reporting, the drafts, the chases, the nurture, the reconciliation, that moves to the seven agents.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How long does setup take?</div>
-        <div class="faq-a">10 minutes for the basic Home tile. 30 minutes to connect all your tools and upload documents. A week for your agents to learn your tone and brand. Then Monday writes itself.</div>
+        <div class="faq-a">30 minutes. OAuth each tool, upload your brand documents, answer five questions about your business. Your first morning brief lands the next day at 06:00. No setup weekend, no kickoff call.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What about my data?</div>
-        <div class="faq-a">Private workspace, encrypted at rest. Your data never trains a model. Every API call is scoped to your workspace. SOC 2 Type II in progress.</div>
+        <div class="faq-a">Private workspace, encrypted at rest. Your data never trains a model. Every API call is scoped to your workspace. SOC 2 Type II in progress. Full audit trail on every agent action.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Who built this?</div>
-        <div class="faq-a">Operators. Klarios was built inside a real business to run a real business. Every feature shipped against the question "would we use this in our own daily standup?" If the answer was no, it didn't ship.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What if I already use Claude or ChatGPT?</div>
-        <div class="faq-a">Keep using them. Klarios isn't a chat interface, it's an operating layer. It pulls in your tools, makes decisions, runs agents, and ships work. Your chat subscription is for thinking. Klarios is for running.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I bring my own Anthropic key?</div>
-        <div class="faq-a">Yes, on every plan. If you want unlimited Claude inference, plug in your own API key and we only charge for the software. Heavy operators save $1-2k/month.</div>
+        <div class="faq-a">Operators. Klarios was built inside a real business to run a real business. Every feature shipped against the question "would we use this in our own morning brief?" If the answer was no, it didn't ship.</div>
       </div>
     </div>
   </div>
@@ -5481,8 +5753,8 @@
      ============================================================ -->
 <section class="register" id="register">
   <div class="register-inner">
-    <h2 class="register-title">Klarios is in<br><span class="italic">private beta.</span></h2>
-    <p class="register-sub">Founders only. One tool, one clear view, one inbox for your whole business. Join the waitlist to be first.</p>
+    <h2 class="register-title">Book a<br><span class="italic">Klarios walkthrough.</span></h2>
+    <p class="register-sub">Thirty minutes with Cameron. No deck, no pitch. We open Klarios, plug in a sample stack, and show you what a week looks like when the business runs itself.</p>
 
     <form class="form" id="waitlistForm" novalidate>
       <div class="form-field">
@@ -5501,13 +5773,13 @@
         <label for="role">What do you run?</label>
         <input type="text" id="role" name="role" placeholder="A subscription fitness company" required>
       </div>
-      <button type="submit" class="form-submit" id="submitBtn">Register your interest</button>
+      <button type="submit" class="form-submit" id="submitBtn">Book a walkthrough</button>
       <p class="form-error" id="formError">Something went wrong. Try again in a moment.</p>
-      <p class="form-note">WE EMAIL YOU WHEN YOUR SPOT OPENS · NO SPAM</p>
+      <p class="form-note">30 MINUTES · CAMERON · NO DECK</p>
     </form>
 
     <div class="form-success" id="formSuccess">
-      <strong>You're on the list.</strong><br>We'll email you when your spot opens.
+      <strong>Booked.</strong><br>Cameron will email you with a time in the next 24 hours.
     </div>
   </div>
 </section>
@@ -5564,12 +5836,12 @@
         errorEl.textContent = 'All fields are required.';
         errorEl.classList.add('show');
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Register your interest';
+        submitBtn.textContent = 'Book a walkthrough';
         return;
       }
 
       try {
-        const res = await fetch('/api/waitlist', {
+        const res = await fetch('https://app.klarios.io/api/leads', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
@@ -5581,7 +5853,7 @@
         errorEl.textContent = 'Something went wrong. Try again in a moment.';
         errorEl.classList.add('show');
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Register your interest';
+        submitBtn.textContent = 'Book a walkthrough';
       }
     });
   })();
