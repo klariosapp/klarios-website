@@ -588,25 +588,23 @@
      ============================================================ */
   .hero {
     min-height: auto;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 160px 32px 360px 32px;
+    padding: 160px 32px 120px 32px;
   }
-  .hero-content { margin: 0 auto; width: 100%; }
+  .hero-content { margin: 0 auto; width: 100%; max-width: 1100px; }
   .hero-dashboard {
-    position: absolute;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(900px, calc(100% - 96px));
+    position: relative;
+    width: min(900px, 100%);
+    margin: 96px auto 0 auto;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px 18px 0 0;
+    border-radius: 18px;
     backdrop-filter: blur(20px);
     padding: 24px 28px;
     z-index: 2;
-    box-shadow: 0 -20px 80px -20px rgba(139, 92, 246, 0.25);
+    box-shadow: 0 40px 100px -30px rgba(139, 92, 246, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
   }
   .hero-dash-head {
     display: flex;
@@ -741,8 +739,8 @@
   }
 
   .hero-popup.hpop1 {
-    top: 140px;
-    left: 6%;
+    bottom: 420px;
+    left: 5%;
     animation: heroPop1 12s ease-in-out infinite;
   }
   @keyframes heroPop1 {
@@ -751,8 +749,8 @@
     34%, 100% { opacity: 0; transform: translateX(-20px); }
   }
   .hero-popup.hpop2 {
-    top: 220px;
-    right: 6%;
+    bottom: 340px;
+    right: 5%;
     animation: heroPop2 12s ease-in-out infinite;
   }
   @keyframes heroPop2 {
@@ -761,8 +759,8 @@
     64%, 100% { opacity: 0; transform: translateX(20px); }
   }
   .hero-popup.hpop3 {
-    top: 340px;
-    left: 8%;
+    bottom: 260px;
+    left: 7%;
     animation: heroPop3 12s ease-in-out infinite;
   }
   @keyframes heroPop3 {
@@ -771,17 +769,15 @@
     94%, 100% { opacity: 0; transform: translateY(20px); }
   }
 
-  /* Move hero-bottom out of the way since dashboard now sits at bottom */
   .hero-bottom { bottom: 24px; }
 
   @media (max-width: 900px) {
-    .hero { padding-bottom: 240px; }
-    .hero-dashboard { width: calc(100% - 40px); padding: 16px 18px; }
+    .hero-dashboard { width: 100%; margin-top: 64px; padding: 16px 16px; }
     .hero-dash-head { margin-bottom: 12px; }
     .hero-dash-title { font-size: 17px; }
-    .hero-dash-metrics { gap: 6px; }
+    .hero-dash-metrics { grid-template-columns: repeat(2, 1fr); gap: 6px; }
     .hero-dash-metric { padding: 10px 12px; }
-    .hero-dash-metric-val { font-size: 18px; }
+    .hero-dash-metric-val { font-size: 20px; }
     .hero-dash-metric-label { font-size: 9px; }
     .hero-dash-metric-delta { font-size: 9px; }
     .hero-popup { display: none; }
@@ -3595,7 +3591,7 @@
     .nav-inner { padding: 0 20px; }
     .nav-brand { font-size: 22px; }
 
-    .hero { padding: 100px 0 260px 0; }
+    .hero { padding: 100px 0 80px 0; }
     .hero-content { padding: 0 24px; }
     .wedge-grid, .feature-row, .feature-row.reverse { grid-template-columns: 1fr; gap: 40px; }
     .feature-row.reverse .feature-text { order: 1; }
@@ -3642,7 +3638,7 @@
     .nav-cta { padding: 7px 14px; font-size: 13px; }
 
     /* HERO */
-    .hero { padding: 84px 0 240px 0; }
+    .hero { padding: 84px 20px 60px 20px; }
     .hero-content { padding: 0 20px; }
     .hero-pill { padding: 6px 14px; font-size: 12px; margin-bottom: 22px; }
     .hero-wordmark { font-size: 64px; line-height: 0.92; letter-spacing: -0.035em; }
