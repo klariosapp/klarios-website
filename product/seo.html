@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Agent — Klarios</title>
+<meta name="description" content="Connects to Google Search Console and your website's GitHub repo. Audits your site, finds keyword opportunities, writes optimised blog posts, and publishes them live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>.nav-wrap { background:rgba(255,255,255,.88); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); box-shadow:0 1px 0 rgba(0,0,0,.06); } .nav-wrap .nav-word { color:var(--ink) !important; } .nav-wrap .nav-link { color:var(--grey-600) !important; } .nav-wrap .nav-link:hover { background:var(--grey-100) !important; color:var(--ink) !important; }</style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<header class="nav-wrap" id="navWrap">
+<nav class="nav">
+  <a href="/" class="nav-brand">
+    <div class="nav-mark"></div>
+    <span class="nav-word">klarios</span>
+  </a>
+  <div class="nav-center">
+    <div class="nav-dropdown">
+      <span class="nav-link">Product <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+      <div class="nav-mega wide">
+        <div class="mega-cols">
+          <div>
+            <div class="mega-group-title">Agents</div>
+            <a href="/product/agents" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><div class="mega-text"><div class="mt-name">All Agents</div><div class="mt-desc">Overview of how your AI team works.</div></div></a>
+            <a href="/product/seo" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div><div class="mega-text"><div class="mt-name">SEO</div><div class="mt-desc">Audit, write, publish. Directly to your site.</div></div></a>
+            <a href="/product/paid-media" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><div class="mega-text"><div class="mt-name">Paid Media</div><div class="mt-desc">Create Meta campaigns from chat.</div></div></a>
+            <a href="/product/social-media" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><div class="mega-text"><div class="mt-name">Social Media</div><div class="mt-desc">Calendar, captions, images, posting.</div></div></a>
+          </div>
+          <div>
+            <div class="mega-group-title">Operations</div>
+            <a href="/product/revenue-sales" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="mega-text"><div class="mt-name">Revenue & Sales</div><div class="mt-desc">CRM, pipeline, follow-ups, recovery.</div></div></a>
+            <a href="/product/finance" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="mega-text"><div class="mt-name">Finance</div><div class="mt-desc">P&L, invoices, runway, expenses via Xero.</div></div></a>
+            <a href="/product/content-studio" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="mega-text"><div class="mt-name">Content Studio</div><div class="mt-desc">AI image generation, 7 models, all formats.</div></div></a>
+            <a href="/product/integrations" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 13a4 4 0 0 0 5.66 0l3-3a4 4 0 1 0-5.66-5.66l-1 1"/><path d="M14 11a4 4 0 0 0-5.66 0l-3 3a4 4 0 1 0 5.66 5.66l1-1"/></svg></div><div class="mega-text"><div class="mt-name">Integrations</div><div class="mt-desc">12 tools. One click each. OAuth.</div></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <span class="nav-link">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+      <div class="nav-mega narrow">
+        <a href="/resources/blog" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6"/></svg></div><div class="mega-text"><div class="mt-name">Blog</div><div class="mt-desc">Insights and product updates.</div></div></a>
+        <a href="/resources/about" class="mega-item"><div class="mega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><div class="mega-text"><div class="mt-name">About</div><div class="mt-desc">The founder and the mission.</div></div></a>
+      </div>
+    </div>
+    <a href="/pricing" class="nav-link">Pricing</a>
+  </div>
+  <div class="nav-right">
+    <a href="/#early-access" class="nav-cta">Get Early Access</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+</header>
+
+<!-- ====== PRODUCT HERO ====== -->
+<section class="product-hero">
+<div class="container text-center">
+  <p class="eyebrow" data-r><span class="dot"></span>SEO Agent</p>
+  <h1 data-r data-d="1">Your SEO agent writes and publishes. You approve.</h1>
+  <p class="hero-sub" data-r data-d="2">Connects to Google Search Console and your website's GitHub repo. Audits your site, finds keyword opportunities, writes optimised blog posts, and publishes them live. No freelancer. No waiting.</p>
+  <div class="hero-ctas" data-r data-d="3">
+    <a href="/#early-access" class="btn-primary">Get Early Access</a>
+  </div>
+</div>
+</section>
+
+<!-- ====== CAPABILITIES ====== -->
+<section style="background:var(--grey-50)">
+<div class="container">
+  <p class="eyebrow" data-r><span class="dot"></span>Capabilities</p>
+  <div class="section-title" data-r data-d="1">From keyword data to published page in 12 minutes.</div>
+  <div class="capability-list" style="margin-top:40px">
+    <div class="capability" data-r data-d="1">
+      <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></div>
+      <div class="cap-text"><strong>Full SEO audit</strong> -- scans every page for title tags, meta descriptions, schema markup, canonical URLs, internal links, and H1 tags. Cross-references with GSC data. Generates a health report saved to your documents.</div>
+    </div>
+    <div class="capability" data-r data-d="2">
+      <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <div class="cap-text"><strong>Quick wins</strong> -- finds pages ranking 11-30 with high impressions. These are one title tag or meta description change away from page 1. Proposes the exact edit, publishes on approval.</div>
+    </div>
+    <div class="capability" data-r data-d="3">
+      <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+      <div class="cap-text"><strong>Blog post writing</strong> -- identifies keyword gaps from GSC, writes a fully optimised post (title under 60 chars, meta under 160 chars, structured H2s, internal links, 800-1500 words), generates a hero image in Content Studio, publishes to your site.</div>
+    </div>
+    <div class="capability" data-r data-d="4">
+      <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="cap-text"><strong>Technical SEO</strong> -- checks robots.txt, sitemap, broken internal links, missing alt tags, duplicate titles. Opens fixes directly on your website.</div>
+    </div>
+    <div class="capability" data-r data-d="5">
+      <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="cap-text"><strong>Competitor gap analysis</strong> -- reads your Strategy and Market & Competitors docs, cross-references with GSC, identifies keywords where competitors outrank you, proposes content or on-page changes to close the gap.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ====== HOW IT WORKS ====== -->
+<section>
+<div class="container">
+  <p class="eyebrow" data-r><span class="dot"></span>How it works</p>
+  <div class="section-title" data-r data-d="1">Five steps to organic growth.</div>
+  <div class="steps">
+    <div class="step-card" data-r data-d="1"><h3>Connect</h3><p>Connect Google Search Console (OAuth) and GitHub (OAuth). Point the agent at your website repo and blog directory. 5 minutes.</p></div>
+    <div class="step-card" data-r data-d="2"><h3>Audit</h3><p>The SEO agent runs a full audit on first connection. Every page scanned. GSC data pulled. A structured report saved to your Documents tab.</p></div>
+    <div class="step-card" data-r data-d="3"><h3>Quick wins</h3><p>The agent identifies pages where a small edit could move you from page 2 to page 1. It proposes the exact change and publishes on your approval.</p></div>
+    <div class="step-card" data-r data-d="4"><h3>Content</h3><p>The agent proposes blog topics based on keyword gaps. You pick one. It writes the full post, generates the hero image, and publishes it to your site.</p></div>
+    <div class="step-card" data-r data-d="5"><h3>Track</h3><p>GSC data updates weekly. The agent monitors rankings, flags drops, and proposes follow-up actions. You see the impact in Analytics.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- ====== CONNECTIONS ====== -->
+<section style="background:var(--grey-50)">
+<div class="container text-center">
+  <p class="eyebrow" data-r><span class="dot"></span>Connections</p>
+  <div class="section-title" data-r data-d="1">Two connections. Full SEO autonomy.</div>
+  <div class="connection-badges" data-r data-d="2">
+    <span class="conn-badge">Google Search Console</span>
+    <span class="conn-badge">GitHub</span>
+  </div>
+</div>
+</section>
+
+<!-- ====== SKILLS ====== -->
+<section>
+<div class="container">
+  <p class="eyebrow" data-r><span class="dot"></span>Skills</p>
+  <div class="section-title" data-r data-d="1">5 locked skills. Execute any time.</div>
+  <div class="capability-list" style="margin-top:40px">
+    <div class="capability" data-r data-d="1">
+      <div class="cap-icon"><span style="font-family:var(--mono);font-weight:600;font-size:14px;color:var(--violet)">01</span></div>
+      <div class="cap-text"><strong>Full SEO Audit</strong></div>
+    </div>
+    <div class="capability" data-r data-d="2">
+      <div class="cap-icon"><span style="font-family:var(--mono);font-weight:600;font-size:14px;color:var(--violet)">02</span></div>
+      <div class="cap-text"><strong>Find Quick Wins</strong></div>
+    </div>
+    <div class="capability" data-r data-d="3">
+      <div class="cap-icon"><span style="font-family:var(--mono);font-weight:600;font-size:14px;color:var(--violet)">03</span></div>
+      <div class="cap-text"><strong>Write Blog Post</strong></div>
+    </div>
+    <div class="capability" data-r data-d="4">
+      <div class="cap-icon"><span style="font-family:var(--mono);font-weight:600;font-size:14px;color:var(--violet)">04</span></div>
+      <div class="cap-text"><strong>Fix Technical SEO</strong></div>
+    </div>
+    <div class="capability" data-r data-d="5">
+      <div class="cap-icon"><span style="font-family:var(--mono);font-weight:600;font-size:14px;color:var(--violet)">05</span></div>
+      <div class="cap-text"><strong>Competitor Gap Analysis</strong></div>
+    </div>
+  </div>
+  <p class="section-sub" style="margin-top:24px" data-r data-d="6">Click a skill in chat and the agent follows a structured checklist -- step by step, tool by tool, until the job is done.</p>
+</div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta-section">
+<div class="container text-center">
+  <div class="section-title" data-r>Your first blog post, published this week.</div>
+  <a href="/#early-access" class="btn-white" data-r data-d="1">Get Early Access</a>
+  <p class="cta-sub-text" data-r data-d="2">Set up in under 1 hour. No credit card required. Cancel anytime.</p>
+</div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+<div class="footer-inner">
+  <div><div class="footer-brand"><div class="nav-mark" style="width:22px;height:22px;border-radius:6px"></div><span class="footer-word">klarios</span></div><p class="footer-desc">AI agents that connect to your business tools and do the work. Your OS for clarity.</p></div>
+  <div class="footer-col"><h4>Product</h4><a href="/product/agents">All Agents</a><a href="/product/seo">SEO</a><a href="/product/paid-media">Paid Media</a><a href="/product/social-media">Social Media</a><a href="/product/revenue-sales">Revenue & Sales</a><a href="/product/finance">Finance</a><a href="/product/content-studio">Content Studio</a><a href="/product/integrations">Integrations</a></div>
+  <div class="footer-col"><h4>Company</h4><a href="/resources/about">About</a><a href="/resources/blog">Blog</a><a href="/pricing">Pricing</a><a href="mailto:hello@klarios.io">Contact</a></div>
+</div>
+<div class="footer-bottom">
+  <span>2026 Klarios. All rights reserved.</span>
+  <div class="footer-social">
+    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l11.733 16H20L8.267 4z"/><path d="M4 20l6.768-6.768M20 4l-6.768 6.768"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+  </div>
+</div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
