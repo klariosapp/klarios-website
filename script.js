@@ -109,4 +109,36 @@
     });
   });
 
+  /* ---- Waitlist form submission ---- */
+  var wForm = document.getElementById('waitlistForm');
+  var wSuccess = document.getElementById('wfSuccess');
+  if (wForm) {
+    wForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = document.getElementById('wfSubmit');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+      var data = {
+        name: document.getElementById('wf-name').value,
+        email: document.getElementById('wf-email').value,
+        whatsapp: document.getElementById('wf-whatsapp').value || '',
+        role: document.getElementById('wf-role').value,
+      };
+      fetch('https://app.klarios.io/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          wForm.style.display = 'none';
+          wSuccess.style.display = 'block';
+        })
+        .catch(function () {
+          wForm.style.display = 'none';
+          wSuccess.style.display = 'block';
+        });
+    });
+  }
+
 })();
