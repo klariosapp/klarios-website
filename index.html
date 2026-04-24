@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20260424b">
+<link rel="stylesheet" href="/styles.css?v=20260424c">
 </head>
 <body>
 
@@ -138,50 +138,54 @@
       </div>
       <a href="/product/seo" class="btn-ghost-light" style="margin-top:24px">Learn more</a>
     </div>
-    <div class="product-demo" data-r data-d="2" data-animate="seo">
-      <div class="pd-chrome">
-        <div class="pd-dots"><span></span><span></span><span></span></div>
-        <span class="pd-url">app.klarios.io / seo</span>
+    <div class="app-mockup" data-r data-d="2" data-animate="seo">
+      <div class="am-head">
+        <span class="am-title">Rankings + Impressions</span>
+        <span class="am-badge am-badge-green">GSC connected</span>
       </div>
-      <div class="pd-body">
-        <div class="pd-header">
-          <span class="pd-title">Organic Performance</span>
-          <span class="pd-badge pd-badge-green">+34% this month</span>
+      <!-- Impressions + CTR chart -->
+      <div class="am-chart-wrap">
+        <div class="am-chart-header">
+          <span class="am-chart-label">Impressions</span>
+          <span class="am-chart-val">12,840 <span class="am-up">+18%</span></span>
         </div>
-        <div class="pd-chart">
-          <svg class="seo-chart" viewBox="0 0 400 120" preserveAspectRatio="none">
+        <div class="am-chart-svg">
+          <svg viewBox="0 0 400 80" preserveAspectRatio="none">
             <defs>
-              <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="rgba(124,58,237,.3)"/>
-                <stop offset="100%" stop-color="rgba(124,58,237,0)"/>
+              <linearGradient id="impGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
               </linearGradient>
             </defs>
-            <path class="chart-fill" d="M0,100 C40,95 70,88 110,75 C150,60 190,65 230,45 C270,28 310,30 350,15 L400,8 L400,120 L0,120 Z" fill="url(#chartGrad)"/>
-            <path class="chart-line" d="M0,100 C40,95 70,88 110,75 C150,60 190,65 230,45 C270,28 310,30 350,15 L400,8" fill="none" stroke="var(--violet)" stroke-width="2.5"/>
-            <circle class="chart-dot cd-1" cx="110" cy="75" r="3.5" fill="var(--violet)"/>
-            <circle class="chart-dot cd-2" cx="230" cy="45" r="3.5" fill="var(--violet)"/>
-            <circle class="chart-dot cd-3" cx="350" cy="15" r="3.5" fill="var(--violet)"/>
+            <path d="M0,65 C30,60 60,58 100,50 C140,42 170,48 210,35 C250,22 290,28 330,18 L400,12 L400,80 L0,80 Z" fill="url(#impGrad)" class="chart-fill-anim"/>
+            <path d="M0,65 C30,60 60,58 100,50 C140,42 170,48 210,35 C250,22 290,28 330,18 L400,12" fill="none" stroke="#7C3AED" stroke-width="2" class="chart-line-anim"/>
+            <circle cx="100" cy="50" r="3" fill="#7C3AED" class="chart-dot-anim"/>
+            <circle cx="210" cy="35" r="3" fill="#7C3AED" class="chart-dot-anim"/>
+            <circle cx="330" cy="18" r="3" fill="#7C3AED" class="chart-dot-anim"/>
           </svg>
-          <div class="pd-chart-labels">
-            <span>Feb</span><span>Mar</span><span>Apr</span>
-          </div>
         </div>
-        <div class="pd-metrics">
-          <div class="pd-metric"><span class="pdm-val" data-count-to="2847">0</span><span class="pdm-label">Sessions</span></div>
-          <div class="pd-metric"><span class="pdm-val" data-count-to="23">0</span><span class="pdm-label">Rankings up</span></div>
-          <div class="pd-metric"><span class="pdm-val" data-count-to="8">0</span><span class="pdm-label">Posts published</span></div>
+        <div class="am-chart-footer">
+          <span class="am-chart-label">CTR</span>
+          <span class="am-chart-val">4.2% <span class="am-up">+0.8%</span></span>
         </div>
-        <div class="pd-activity">
-          <div class="pd-activity-row">
-            <span class="pd-act-dot" style="background:var(--green)"></span>
-            <span class="pd-act-text">"Top 10 Networking Events in Dubai" published</span>
-            <span class="pd-act-time">2h ago</span>
-          </div>
-          <div class="pd-activity-row">
-            <span class="pd-act-dot" style="background:var(--violet)"></span>
-            <span class="pd-act-text">3 title tags optimised on /services</span>
-            <span class="pd-act-time">6h ago</span>
-          </div>
+      </div>
+      <!-- Rankings table -->
+      <div class="am-table">
+        <div class="am-row">
+          <div class="am-row-left"><span class="am-dot" style="background:var(--green)"></span><div><div class="am-kw">founder operating system</div><div class="am-imp">4,280 impressions</div></div></div>
+          <div class="am-row-right"><span class="am-pos">#3</span><span class="am-change am-up">+5</span></div>
+        </div>
+        <div class="am-row">
+          <div class="am-row-left"><span class="am-dot" style="background:var(--green)"></span><div><div class="am-kw">ai agents for business</div><div class="am-imp">2,890 impressions</div></div></div>
+          <div class="am-row-right"><span class="am-pos">#7</span><span class="am-change am-up">+2</span></div>
+        </div>
+        <div class="am-row">
+          <div class="am-row-left"><span class="am-dot" style="background:var(--amber)"></span><div><div class="am-kw">ceo productivity tools</div><div class="am-imp">5,120 impressions</div></div></div>
+          <div class="am-row-right"><span class="am-pos">#12</span><span class="am-change am-warn">Fix</span></div>
+        </div>
+        <div class="am-row">
+          <div class="am-row-left"><span class="am-dot" style="background:var(--green)"></span><div><div class="am-kw">ai marketing manager</div><div class="am-imp">1,640 impressions</div></div></div>
+          <div class="am-row-right"><span class="am-pos">#4</span><span class="am-change am-up">+8</span></div>
         </div>
       </div>
     </div>
@@ -205,35 +209,42 @@
       </div>
       <a href="/product/paid-media" class="btn-ghost-light" style="margin-top:24px">Learn more</a>
     </div>
-    <div class="product-demo" data-r data-d="2" data-animate="ads">
-      <div class="pd-chrome">
-        <div class="pd-dots"><span></span><span></span><span></span></div>
-        <span class="pd-url">app.klarios.io / paid-media</span>
+    <div class="app-mockup" data-r data-d="2" data-animate="ads">
+      <div class="am-head">
+        <span class="am-title">Campaign Performance</span>
+        <span class="am-badge am-badge-violet">3 active</span>
       </div>
-      <div class="pd-body">
-        <div class="pd-header">
-          <span class="pd-title">Campaign Performance</span>
-          <span class="pd-badge pd-badge-violet">3 active</span>
+      <!-- Metric row -->
+      <div class="am-metrics">
+        <div class="am-metric"><div class="am-metric-label">Meta Spend</div><div class="am-metric-val">$4,280</div><div class="am-metric-delta am-up">+$312 vs last</div></div>
+        <div class="am-metric"><div class="am-metric-label">ROAS</div><div class="am-metric-val">3.2x</div><div class="am-metric-delta am-up">+0.4x</div></div>
+        <div class="am-metric"><div class="am-metric-label">CPA</div><div class="am-metric-val">$15.10</div><div class="am-metric-delta am-down">-6.1%</div></div>
+      </div>
+      <!-- CPA chart -->
+      <div class="am-chart-wrap">
+        <div class="am-chart-header">
+          <span class="am-chart-label">Cost per acquisition, 30 days</span>
+          <span class="am-chart-val">trending down, target $12</span>
         </div>
-        <div class="pd-campaigns">
-          <div class="pd-campaign-row anim-row">
-            <div class="pcr-left"><span class="pcr-dot" style="background:var(--green)"></span><span class="pcr-name">Summer Launch</span></div>
-            <div class="pcr-right"><span class="pcr-stat">CPA $12.40</span><span class="pcr-badge pcr-strong">Strong</span></div>
-          </div>
-          <div class="pd-campaign-row anim-row">
-            <div class="pcr-left"><span class="pcr-dot" style="background:var(--blue)"></span><span class="pcr-name">Retargeting Q2</span></div>
-            <div class="pcr-right"><span class="pcr-stat">CPA $8.90</span><span class="pcr-badge pcr-scaling">Scaling</span></div>
-          </div>
-          <div class="pd-campaign-row anim-row">
-            <div class="pcr-left"><span class="pcr-dot" style="background:var(--amber)"></span><span class="pcr-name">Brand Awareness</span></div>
-            <div class="pcr-right"><span class="pcr-stat">CPA $24.10</span><span class="pcr-badge pcr-watch">Watch</span></div>
-          </div>
+        <div class="am-chart-svg">
+          <svg viewBox="0 0 400 70" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="cpaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,15 L40,18 L80,12 L120,28 L160,24 L200,35 L240,30 L280,42 L320,38 L360,48 L400,45 L400,70 L0,70 Z" fill="url(#cpaGrad)" class="chart-fill-anim"/>
+            <path d="M0,15 L40,18 L80,12 L120,28 L160,24 L200,35 L240,30 L280,42 L320,38 L360,48 L400,45" fill="none" stroke="#7C3AED" stroke-width="2" class="chart-line-anim"/>
+            <circle cx="400" cy="45" r="4" fill="#7C3AED" class="chart-dot-anim"/>
+          </svg>
         </div>
-        <div class="pd-metrics">
-          <div class="pd-metric"><span class="pdm-val">$4,280</span><span class="pdm-label">Total spend</span></div>
-          <div class="pd-metric"><span class="pdm-val">$15.10</span><span class="pdm-label">Avg CPA</span></div>
-          <div class="pd-metric"><span class="pdm-val">3.2x</span><span class="pdm-label">ROAS</span></div>
-        </div>
+      </div>
+      <!-- Campaign rows -->
+      <div class="am-campaigns">
+        <div class="am-camp-row"><span class="am-dot" style="background:var(--green)"></span><span class="am-camp-name">Summer Launch</span><span class="am-camp-stat">CPA $12.40</span><span class="am-camp-badge am-camp-strong">Strong</span></div>
+        <div class="am-camp-row"><span class="am-dot" style="background:var(--blue)"></span><span class="am-camp-name">Retargeting Q2</span><span class="am-camp-stat">CPA $8.90</span><span class="am-camp-badge am-camp-scaling">Scaling</span></div>
+        <div class="am-camp-row"><span class="am-dot" style="background:var(--amber)"></span><span class="am-camp-name">Brand Awareness</span><span class="am-camp-stat">CPA $24.10</span><span class="am-camp-badge am-camp-watch">Watch</span></div>
       </div>
     </div>
   </div>
@@ -256,27 +267,30 @@
       </div>
       <a href="/product/content-studio" class="btn-ghost-light" style="margin-top:24px">Learn more</a>
     </div>
-    <div class="product-demo" data-r data-d="2" data-animate="studio">
-      <div class="pd-chrome">
-        <div class="pd-dots"><span></span><span></span><span></span></div>
-        <span class="pd-url">app.klarios.io / content-studio</span>
+    <div class="app-mockup" data-r data-d="2" data-animate="studio">
+      <div class="am-head">
+        <span class="am-title">Content Studio</span>
+        <span class="am-badge am-badge-violet">7 models</span>
       </div>
-      <div class="pd-body">
-        <div class="pd-header">
-          <span class="pd-title">Generated</span>
-          <span class="pd-badge pd-badge-violet">4 images</span>
-        </div>
-        <div class="pd-studio-grid">
-          <div class="pd-studio-thumb" style="--hue:260"><div class="pst-gradient"></div><span class="pst-format">1:1</span></div>
-          <div class="pd-studio-thumb" style="--hue:320"><div class="pst-gradient"></div><span class="pst-format">9:16</span></div>
-          <div class="pd-studio-thumb" style="--hue:210"><div class="pst-gradient"></div><span class="pst-format">1:1</span></div>
-          <div class="pd-studio-thumb generating"><div class="pst-spinner"></div><span class="pst-format">9:16</span></div>
-        </div>
-        <div class="pd-models">
-          <span class="pd-model active">Ideogram V3</span>
-          <span class="pd-model">Seedream</span>
-          <span class="pd-model">Imagen 4</span>
-          <span class="pd-model">Grok</span>
+      <!-- Model selector -->
+      <div class="am-models">
+        <span class="am-model active">Grok Imagine</span>
+        <span class="am-model">Ideogram V3</span>
+        <span class="am-model">Seedream 5.0</span>
+        <span class="am-model">Imagen 4</span>
+      </div>
+      <!-- Asset grid -->
+      <div class="am-asset-grid">
+        <div class="am-asset" style="--hue:270"><div class="am-asset-bg"></div><span class="am-asset-label">1:1 Photo</span></div>
+        <div class="am-asset" style="--hue:330"><div class="am-asset-bg"></div><span class="am-asset-label">9:16 Story</span></div>
+        <div class="am-asset" style="--hue:200"><div class="am-asset-bg"></div><span class="am-asset-label">1:1 Feed</span></div>
+        <div class="am-asset am-generating"><div class="am-asset-spinner"></div><span class="am-asset-label">Generating...</span></div>
+      </div>
+      <!-- Schedule row -->
+      <div class="am-schedule">
+        <div class="am-sched-head"><span class="am-sched-title">Posting schedule</span><span class="am-sched-sub">3 queued this week</span></div>
+        <div class="am-sched-days">
+          <span class="am-day">M</span><span class="am-day filled">T</span><span class="am-day">W</span><span class="am-day filled">T</span><span class="am-day">F</span><span class="am-day filled">S</span><span class="am-day">S</span>
         </div>
       </div>
     </div>
@@ -300,49 +314,29 @@
       </div>
       <a href="/product/revenue-sales" class="btn-ghost-light" style="margin-top:24px">Learn more</a>
     </div>
-    <div class="product-demo" data-r data-d="2" data-animate="crm">
-      <div class="pd-chrome">
-        <div class="pd-dots"><span></span><span></span><span></span></div>
-        <span class="pd-url">app.klarios.io / revenue</span>
+    <div class="app-mockup" data-r data-d="2" data-animate="crm">
+      <div class="am-head">
+        <span class="am-title">Sales Pipeline</span>
+        <span class="am-badge am-badge-green">$42,800 value</span>
       </div>
-      <div class="pd-body">
-        <div class="pd-header">
-          <span class="pd-title">Pipeline</span>
-          <span class="pd-badge pd-badge-green">$42,800 value</span>
+      <div class="am-pipeline">
+        <div class="am-pipe-col">
+          <div class="am-pipe-header"><span class="am-pipe-label">Open</span><span class="am-pipe-count">12</span></div>
+          <div class="am-pipe-card"><div class="am-pc-name">Sarah K.</div><div class="am-pc-val">$4,200</div><div class="am-pc-source">Calendly</div></div>
+          <div class="am-pipe-card"><div class="am-pc-name">Ahmed R.</div><div class="am-pc-val">$2,800</div><div class="am-pc-source">Instantly</div></div>
         </div>
-        <div class="pd-pipeline">
-          <div class="pd-pipe-col">
-            <span class="ppc-label">Open</span>
-            <div class="ppc-bar"><div class="ppc-fill" style="--h:85%;--c:var(--grey-400)"></div></div>
-            <span class="ppc-count">12</span>
-          </div>
-          <div class="pd-pipe-col">
-            <span class="ppc-label">Interested</span>
-            <div class="ppc-bar"><div class="ppc-fill" style="--h:60%;--c:var(--blue)"></div></div>
-            <span class="ppc-count">8</span>
-          </div>
-          <div class="pd-pipe-col">
-            <span class="ppc-label">Meeting</span>
-            <div class="ppc-bar"><div class="ppc-fill" style="--h:35%;--c:var(--violet)"></div></div>
-            <span class="ppc-count">4</span>
-          </div>
-          <div class="pd-pipe-col">
-            <span class="ppc-label">Won</span>
-            <div class="ppc-bar"><div class="ppc-fill" style="--h:18%;--c:var(--green)"></div></div>
-            <span class="ppc-count">2</span>
-          </div>
+        <div class="am-pipe-col">
+          <div class="am-pipe-header"><span class="am-pipe-label">Interested</span><span class="am-pipe-count">8</span></div>
+          <div class="am-pipe-card"><div class="am-pc-name">James T.</div><div class="am-pc-val">$6,500</div><div class="am-pc-source">Website</div></div>
+          <div class="am-pipe-card highlight"><div class="am-pc-name">Lisa M.</div><div class="am-pc-val">$3,200</div><div class="am-pc-source">Instantly</div><div class="am-pc-action">Follow-up drafted</div></div>
         </div>
-        <div class="pd-activity">
-          <div class="pd-activity-row">
-            <span class="pd-act-dot" style="background:var(--green)"></span>
-            <span class="pd-act-text">Sarah K. moved to Won ($4,200)</span>
-            <span class="pd-act-time">1h ago</span>
-          </div>
-          <div class="pd-activity-row">
-            <span class="pd-act-dot" style="background:var(--amber)"></span>
-            <span class="pd-act-text">No-show recovery sent to 2 contacts</span>
-            <span class="pd-act-time">3h ago</span>
-          </div>
+        <div class="am-pipe-col">
+          <div class="am-pipe-header"><span class="am-pipe-label">Meeting</span><span class="am-pipe-count">4</span></div>
+          <div class="am-pipe-card"><div class="am-pc-name">David N.</div><div class="am-pc-val">$8,400</div><div class="am-pc-source">Calendly</div></div>
+        </div>
+        <div class="am-pipe-col">
+          <div class="am-pipe-header"><span class="am-pipe-label">Won</span><span class="am-pipe-count">2</span></div>
+          <div class="am-pipe-card won"><div class="am-pc-name">Maria S.</div><div class="am-pc-val">$5,100</div><div class="am-pc-source">Website</div></div>
         </div>
       </div>
     </div>
@@ -528,6 +522,6 @@
 </div>
 </footer>
 
-<script src="/script.js?v=20260424b"></script>
+<script src="/script.js?v=20260424c"></script>
 </body>
 </html>

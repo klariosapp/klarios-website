@@ -19,14 +19,13 @@
     revealEls.forEach(function (el) { revealObs.observe(el); });
   }
 
-  /* ---- Product demo animations ---- */
-  var demoEls = document.querySelectorAll('.product-demo[data-animate]');
+  /* ---- App mockup animations ---- */
+  var demoEls = document.querySelectorAll('.app-mockup[data-animate]');
   if (demoEls.length) {
     var demoObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) {
           e.target.classList.add('animated');
-          // Trigger counter animations
           var counters = e.target.querySelectorAll('[data-count-to]');
           counters.forEach(function (el) {
             animateCounter(el, parseInt(el.getAttribute('data-count-to'), 10));
