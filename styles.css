@@ -1004,6 +1004,36 @@ footer {
 .conn-badge .ic-dot { width:6px; height:6px; border-radius:50%; background:var(--green); }
 
 /* ================================================================
+   LEGAL PAGES (Privacy, Terms)
+   ================================================================ */
+.legal-content { max-width:680px; }
+.legal-content h2 {
+  font-family:var(--serif); font-size:22px;
+  letter-spacing:-0.02em; color:var(--ink);
+  margin-top:36px; margin-bottom:10px;
+}
+.legal-content h2:first-child { margin-top:0; }
+.legal-content h3 {
+  font-size:14px; font-weight:600; color:var(--ink);
+  margin-top:20px; margin-bottom:6px;
+}
+.legal-content p {
+  font-size:14px; line-height:1.65; color:var(--grey-600);
+  margin-bottom:10px;
+}
+.legal-content ul {
+  margin:0 0 12px 0; padding-left:20px;
+  list-style:disc;
+}
+.legal-content li {
+  font-size:14px; line-height:1.6; color:var(--grey-600);
+  margin-bottom:4px;
+}
+.legal-content a { color:var(--violet); text-decoration:underline; }
+.legal-content a:hover { color:var(--violet-deep); }
+.legal-content strong { color:var(--ink); font-weight:500; }
+
+/* ================================================================
    ABOUT PAGE
    ================================================================ */
 .about-story { font-size:17px; line-height:1.7; color:var(--body); max-width:640px; }
