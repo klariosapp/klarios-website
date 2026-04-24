@@ -157,6 +157,11 @@ section { padding:100px 0; position:relative; }
   display:flex; align-items:center;
 }
 .nav-brand { display:flex; align-items:center; gap:10px; }
+.nav-logo {
+  width:30px; height:30px; border-radius:8px;
+  object-fit:contain;
+}
+/* Legacy nav-mark kept for subpages */
 .nav-mark {
   width:30px; height:30px; border-radius:9px;
   background:var(--gradient); position:relative;
