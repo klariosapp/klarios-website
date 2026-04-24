@@ -19,13 +19,44 @@
     revealEls.forEach(function (el) { revealObs.observe(el); });
   }
 
+  /* ---- App mockup animations ---- */
+  var demoEls = document.querySelectorAll('.app-mockup[data-animate]');
+  if (demoEls.length) {
+    var demoObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('animated');
+          var counters = e.target.querySelectorAll('[data-count-to]');
+          counters.forEach(function (el) {
+            animateCounter(el, parseInt(el.getAttribute('data-count-to'), 10));
+          });
+          demoObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    demoEls.forEach(function (el) { demoObs.observe(el); });
+  }
+
+  function animateCounter(el, target) {
+    var duration = 1500;
+    var start = performance.now();
+    function tick(now) {
+      var elapsed = now - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = Math.round(eased * target);
+      el.textContent = current.toLocaleString();
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   /* ---- Nav scroll state ---- */
   var navWrap = document.getElementById('navWrap');
   if (navWrap) {
     window.addEventListener('scroll', function () {
       navWrap.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
-    // Initial check
     navWrap.classList.toggle('scrolled', window.scrollY > 60);
   }
 
@@ -36,7 +67,6 @@
     if (!trigger) return;
     trigger.addEventListener('click', function (e) {
       e.stopPropagation();
-      // Close other dropdowns
       dropdowns.forEach(function (other) {
         if (other !== dd) other.classList.remove('open');
       });
@@ -51,6 +81,9 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       dropdowns.forEach(function (dd) { dd.classList.remove('open'); });
+      // Also close mobile menu
+      var mm = document.getElementById('mobileMenu');
+      if (mm) mm.classList.remove('open');
     }
   });
 
@@ -59,7 +92,6 @@
     q.addEventListener('click', function () {
       var item = q.closest('.faq-item');
       var isOpen = item.classList.contains('open');
-      // Close all
       document.querySelectorAll('.faq-item.open').forEach(function (i) {
         i.classList.remove('open');
       });
@@ -85,11 +117,13 @@
   /* ---- Mobile nav toggle ---- */
   var hamburger = document.getElementById('navHamburger');
   var mobileMenu = document.getElementById('mobileMenu');
-  if (hamburger && mobileMenu) {
+  if (hamburger) {
     hamburger.addEventListener('click', function () {
-      mobileMenu.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded',
-        mobileMenu.classList.contains('open') ? 'true' : 'false');
+      if (mobileMenu) {
+        mobileMenu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded',
+          mobileMenu.classList.contains('open') ? 'true' : 'false');
+      }
     });
   }
 
@@ -104,7 +138,6 @@
       var offset = 80;
       var top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top: top, behavior: 'smooth' });
-      // Close mobile menu if open
       if (mobileMenu) mobileMenu.classList.remove('open');
     });
   });
